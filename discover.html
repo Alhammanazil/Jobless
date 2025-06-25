@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Discover Jobs - Jobless</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-brand">Jobless</div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="menu">
+          <a href="index.html" class="menu-item">Home</a>
+          <a href="discover.html" class="menu-item menu-item-active"
+            >Discover</a
+          >
+          <a href="post-job.html" class="menu-item">Post a Job</a>
+          <a href="contact.html" class="menu-item">Contact Us</a>
+        </div>
+        <div class="nav-ctas">
+          <a href="" class="sign-up">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="hero animate-fade-in">
+        <h1 class="hero-headline">Discover Remote Jobs</h1>
+        <p class="hero-subheadline">
+          Browse all available remote jobs and find the perfect match for your
+          skills and interests.
+        </p>
+      </div>
+      <div class="jobs animate-slide-up">
+        <h2 class="jobs-headline">All Jobs</h2>
+        <div class="jobs-list">
+          <!-- Example job card, duplicate as needed -->
+          <a href="#" class="job animate-pop">
+            <header class="job-header">
+              <img src="/img/google-logo.png" alt="google" class="job-logo" />
+              <div class="job-meta">
+                <h3 class="job-title">UI/UX Designer</h3>
+                <p class="job-company">Google</p>
+              </div>
+            </header>
+            <div class="job-description">
+              <p>
+                Design beautiful and user-friendly interfaces for our products.
+              </p>
+              <hr class="job-divider" />
+              <footer class="job-footer">
+                <div class="job-tags">
+                  <span class="job-tag">Figma</span>
+                </div>
+                <div class="job-salary">$80,000 - $100,000</div>
+              </footer>
+            </div>
+          </a>
+          <!-- ...more jobs... -->
+        </div>
+      </div>
+    </div>
+    <div class="menu-mobile-overlay"></div>
+    <nav class="menu-mobile" tabindex="-1">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="discover.html" class="menu-item menu-item-active">Discover</a>
+      <a href="post-job.html" class="menu-item">Post a Job</a>
+      <a href="contact.html" class="menu-item">Contact Us</a>
+      <a href="" class="sign-up">Sign Up</a>
+    </nav>
+    <script src="main.js"></script>
+  </body>
+</html>

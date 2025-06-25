@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
       rel="stylesheet"
@@ -21,11 +21,16 @@
     <nav class="nav">
       <div class="container">
         <div class="nav-brand">Jobless</div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="menu">
-          <a href="menu-item" class="menu-item menu-item-active">Home</a>
-          <a href="menu-item" class="menu-item">Discover</a>
-          <a href="menu-item" class="menu-item">Post a Job</a>
-          <a href="menu-item" class="menu-item">Contact Us</a>
+          <a href="index.html" class="menu-item menu-item-active">Home</a>
+          <a href="discover.html" class="menu-item">Discover</a>
+          <a href="post-job.html" class="menu-item">Post a Job</a>
+          <a href="contact.html" class="menu-item">Contact Us</a>
         </div>
         <div class="nav-ctas">
           <a href="" class="sign-up">Sign Up</a>
@@ -33,7 +38,7 @@
       </div>
     </nav>
     <div class="container">
-      <div class="hero">
+      <div class="hero animate-fade-in">
         <h1 class="hero-headline">
           Get Connected to the Best Remote Jobs in Your Field
         </h1>
@@ -46,11 +51,11 @@
           <a href="" class="cta-secondary">How it works?</a>
         </div>
       </div>
-      <div class="jobs">
+      <div class="jobs animate-slide-up">
         <h2 class="jobs-headline">Featured Jobs</h2>
         <div class="jobs-list">
-            <!-- Job 1 -->
-          <a href="#" class="job">
+          <!-- Job 1 -->
+          <a href="#" class="job animate-pop">
             <header class="job-header">
               <img src="/img/google-logo.png" alt="google" class="job-logo" />
               <div class="job-meta">
@@ -63,7 +68,7 @@
                 We are looking for an experienced front-end developer to join
                 our team.
               </p>
-              <hr class="job-divider"/>
+              <hr class="job-divider" />
               <footer class="job-footer">
                 <div class="job-tags">
                   <span class="job-tag">React</span>
@@ -74,19 +79,21 @@
           </a>
 
           <!-- Job 2 -->
-          <a href="#" class="job">
+          <a href="#" class="job animate-pop">
             <header class="job-header">
-              <img src="/img/traveloka-logo.jpg" alt="google" class="job-logo" />
+              <img
+                src="/img/traveloka-logo.jpg"
+                alt="google"
+                class="job-logo"
+              />
               <div class="job-meta">
                 <h3 class="job-title">Data Scientist</h3>
                 <p class="job-company">Traveloka</p>
               </div>
             </header>
             <div class="job-description">
-              <p>
-                We are seeking a data scientist to join our team.
-              </p>
-              <hr class="job-divider"/>
+              <p>We are seeking a data scientist to join our team.</p>
+              <hr class="job-divider" />
               <footer class="job-footer">
                 <div class="job-tags">
                   <span class="job-tag">Python</span>
@@ -97,7 +104,7 @@
           </a>
 
           <!-- Job 3 -->
-          <a href="#" class="job">
+          <a href="#" class="job animate-pop">
             <header class="job-header">
               <img src="/img/gojek-logo.png" alt="google" class="job-logo" />
               <div class="job-meta">
@@ -106,10 +113,8 @@
               </div>
             </header>
             <div class="job-description">
-              <p>
-                We are seeking a technical writer to join our team.
-              </p>
-              <hr class="job-divider"/>
+              <p>We are seeking a technical writer to join our team.</p>
+              <hr class="job-divider" />
               <footer class="job-footer">
                 <div class="job-tags">
                   <span class="job-tag">Documentation</span>
@@ -121,5 +126,15 @@
         </div>
       </div>
     </div>
+    <!-- Mobile menu overlay & drawer -->
+    <div class="menu-mobile-overlay"></div>
+    <nav class="menu-mobile" tabindex="-1">
+      <a href="index.html" class="menu-item menu-item-active">Home</a>
+      <a href="discover.html" class="menu-item">Discover</a>
+      <a href="post-job.html" class="menu-item">Post a Job</a>
+      <a href="contact.html" class="menu-item">Contact Us</a>
+      <a href="" class="sign-up">Sign Up</a>
+    </nav>
+    <script src="main.js"></script>
   </body>
 </html>
