@@ -3,99 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
-      rel="stylesheet"
-    />
+    <title>Contact us — Jobless</title>
+    <meta name="description" content="Questions or feedback about Jobless? Send us a message or read the frequently asked questions." />
+    <meta name="theme-color" content="#4338ca" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>try{var t=JSON.parse(localStorage.getItem('jobless:theme'));if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Contact Us - Jobless</title>
   </head>
-  <body>
-    <nav class="nav">
+  <body data-page="contact">
+    <main>
+      <section class="hero page-hero" style="padding-bottom:28px">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <div class="container">
+          <h1>Let's <span class="grad">talk</span></h1>
+          <p class="lead">Have questions or feedback? Send us a message and we'll get back to you soon.</p>
+        </div>
+      </section>
+
       <div class="container">
-        <div class="nav-brand">Jobless</div>
-        <button class="hamburger" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="menu">
-          <a href="index.html" class="menu-item">Home</a>
-          <a href="discover.html" class="menu-item">Discover</a>
-          <a href="post-job.html" class="menu-item">Post a Job</a>
-          <a href="contact.html" class="menu-item menu-item-active"
-            >Contact Us</a
-          >
-        </div>
-        <div class="nav-ctas">
-          <a href="" class="sign-up">Sign Up</a>
+        <div class="form-layout">
+          <div class="card" id="contact-card">
+            <form class="form" id="contact-form" novalidate>
+              <div class="group"><label for="name">Your name</label><input class="input" id="name" name="name" autocomplete="name" /><p class="error" data-err="name"></p></div>
+              <div class="group"><label for="email">Your email</label><input class="input" id="email" name="email" type="email" autocomplete="email" /><p class="error" data-err="email"></p></div>
+              <div class="group"><label for="message">Your message</label><textarea class="textarea" id="message" name="message"></textarea><p class="error" data-err="message"></p></div>
+              <button class="btn btn-primary" type="submit" style="justify-self:start">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-side">
+            <div class="info"><span class="ico" aria-hidden="true">✉️</span><div><b>Email</b><span>hello@jobless.example</span></div></div>
+            <div class="info"><span class="ico" aria-hidden="true">🌍</span><div><b>Where we work</b><span>Fully remote, everywhere</span></div></div>
+            <div class="info"><span class="ico" aria-hidden="true">⏱️</span><div><b>Response time</b><span>Within one business day</span></div></div>
+          </div>
         </div>
       </div>
-    </nav>
-    <div class="container">
-      <div class="hero animate-fade-in">
-        <h1 class="hero-headline">Contact Us</h1>
-        <p class="hero-subheadline">
-          Have questions or feedback? Fill out the form below and we'll get back
-          to you soon.
-        </p>
-      </div>
-      <form
-        class="animate-slide-up"
-        style="
-          max-width: 500px;
-          margin: 32px auto 0;
-          display: flex;
-          flex-direction: column;
-          gap: 18px;
-        "
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          required
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          required
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <textarea
-          placeholder="Your Message"
-          required
-          style="
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #e3e6fa;
-            min-height: 100px;
-          "
-        ></textarea>
-        <button
-          type="submit"
-          class="cta-primary"
-          style="width: 180px; margin: 0 auto"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
-    <div class="menu-mobile-overlay"></div>
-    <nav class="menu-mobile" tabindex="-1">
-      <a href="index.html" class="menu-item">Home</a>
-      <a href="discover.html" class="menu-item">Discover</a>
-      <a href="post-job.html" class="menu-item">Post a Job</a>
-      <a href="contact.html" class="menu-item menu-item-active">Contact Us</a>
-      <a href="" class="sign-up">Sign Up</a>
-    </nav>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" style="justify-content:center;text-align:center"><div><h2>Frequently asked questions</h2></div></div>
+          <div class="faq">
+            <details><summary>Is Jobless free for job seekers?</summary><p>Yes. Searching, saving and applying never cost anything.</p></details>
+            <details><summary>How do I post a job?</summary><p>Open Post a Job, fill in the form and check the live preview. Your listing appears on Discover right away.</p></details>
+            <details><summary>Are these real listings?</summary><p>Yes. Listings are pulled from Remotive and refreshed every few hours, and Apply takes you to the original posting. Jobless is a practice project, though, so jobs you post here, and the contact and sign-up forms, stay in demo mode.</p></details>
+            <details><summary>Where is my data stored?</summary><p>Saved jobs, jobs you post and your theme choice stay in your browser only. Nothing is uploaded.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

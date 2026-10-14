@@ -3,109 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
-      rel="stylesheet"
-    />
+    <title>Post a remote job — Jobless</title>
+    <meta name="description" content="Post a remote job in two minutes and preview exactly how candidates will see it." />
+    <meta name="theme-color" content="#4338ca" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>try{var t=JSON.parse(localStorage.getItem('jobless:theme'));if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Post a Job - Jobless</title>
   </head>
-  <body>
-    <nav class="nav">
-      <div class="container">
-        <div class="nav-brand">Jobless</div>
-        <button class="hamburger" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="menu">
-          <a href="index.html" class="menu-item">Home</a>
-          <a href="discover.html" class="menu-item">Discover</a>
-          <a href="post-job.html" class="menu-item menu-item-active"
-            >Post a Job</a
-          >
-          <a href="contact.html" class="menu-item">Contact Us</a>
+  <body data-page="post">
+    <main>
+      <section class="hero page-hero" style="padding-bottom:28px">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <div class="container">
+          <h1>Post a <span class="grad">remote job</span></h1>
+          <p class="lead">Fill in the details and watch the preview update as you type.</p>
         </div>
-        <div class="nav-ctas">
-          <a href="" class="sign-up">Sign Up</a>
+      </section>
+
+      <div class="container" id="post-wrap">
+        <div class="form-layout">
+          <form class="card form" id="post-form" novalidate>
+            <div class="form-grid">
+              <div class="group"><label for="title">Job title</label><input class="input" id="title" name="title" placeholder="e.g. Frontend Developer" autocomplete="off" /><p class="error" data-err="title"></p></div>
+              <div class="group"><label for="company">Company name</label><input class="input" id="company" name="company" placeholder="e.g. Acme Inc." autocomplete="organization" /><p class="error" data-err="company"></p></div>
+            </div>
+            <div class="form-grid">
+              <div class="group"><label for="category">Category</label><select class="select" id="category" name="category" style="width:100%"></select></div>
+              <div class="group"><label for="type">Job type</label><select class="select" id="type" name="type" style="width:100%"><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Freelance</option></select></div>
+            </div>
+            <div class="form-grid">
+              <div class="group"><label for="level">Level</label><select class="select" id="level" name="level" style="width:100%"><option>Junior</option><option selected>Mid</option><option>Senior</option></select></div>
+              <div class="group"><label for="tags">Skills <span style="font-weight:500;color:var(--muted)">(comma separated)</span></label><input class="input" id="tags" name="tags" placeholder="React, TypeScript" autocomplete="off" /></div>
+            </div>
+            <div class="form-grid">
+              <div class="group"><label for="min">Salary from (USD / year)</label><input class="input" id="min" name="min" type="number" min="0" step="1000" placeholder="70000" inputmode="numeric" /></div>
+              <div class="group"><label for="max">Salary to (USD / year)</label><input class="input" id="max" name="max" type="number" min="0" step="1000" placeholder="90000" inputmode="numeric" /><p class="error" data-err="max"></p></div>
+            </div>
+            <div class="group">
+              <label for="description">Job description</label>
+              <textarea class="textarea" id="description" name="description" placeholder="What will this person do, and what makes the role a good fit?"></textarea>
+              <p class="hint"><span id="desc-count">0 characters</span><span>Minimum 30</span></p>
+              <p class="error" data-err="description"></p>
+            </div>
+            <button class="btn btn-primary" type="submit" style="justify-self:start">Post Job</button>
+          </form>
+
+          <aside class="sticky" aria-label="Live preview">
+            <p class="preview-label">Live preview</p>
+            <div id="preview"></div>
+            <p class="hint" style="margin-top:12px">Your listing is saved in this browser and shows up on Discover.</p>
+          </aside>
         </div>
       </div>
-    </nav>
-    <div class="container">
-      <div class="hero animate-fade-in">
-        <h1 class="hero-headline">Post a Remote Job</h1>
-        <p class="hero-subheadline">
-          Fill out the form below to post a new remote job opportunity.
-        </p>
-      </div>
-      <form
-        class="animate-slide-up"
-        style="
-          max-width: 500px;
-          margin: 32px auto 0;
-          display: flex;
-          flex-direction: column;
-          gap: 18px;
-        "
-      >
-        <input
-          type="text"
-          placeholder="Job Title"
-          required
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <input
-          type="text"
-          placeholder="Company Name"
-          required
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <input
-          type="text"
-          placeholder="Location (Remote)"
-          required
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <input
-          type="text"
-          placeholder="Salary Range"
-          style="padding: 12px; border-radius: 6px; border: 1px solid #e3e6fa"
-        />
-        <textarea
-          placeholder="Job Description"
-          required
-          style="
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #e3e6fa;
-            min-height: 100px;
-          "
-        ></textarea>
-        <button
-          type="submit"
-          class="cta-primary"
-          style="width: 180px; margin: 0 auto"
-        >
-          Post Job
-        </button>
-      </form>
-    </div>
-    <div class="menu-mobile-overlay"></div>
-    <nav class="menu-mobile" tabindex="-1">
-      <a href="index.html" class="menu-item">Home</a>
-      <a href="discover.html" class="menu-item">Discover</a>
-      <a href="post-job.html" class="menu-item menu-item-active">Post a Job</a>
-      <a href="contact.html" class="menu-item">Contact Us</a>
-      <a href="" class="sign-up">Sign Up</a>
-    </nav>
+    </main>
+    <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
