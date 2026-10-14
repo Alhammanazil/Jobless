@@ -66,7 +66,8 @@ function normalise(j) {
     id: 'r' + j.id,
     title,
     company: String(j.company_name || 'Unknown company').trim(),
-    logo: j.company_logo_url || j.company_logo || null,
+    // Remotive serves logos with a same-origin policy, so other sites cannot embed them; the UI shows a coloured initial instead.
+    logo: null,
     category: CATEGORY[String(j.category || '').toLowerCase()] || 'Other',
     type: TYPE[j.job_type] || 'Full-time',
     level: level(title),
